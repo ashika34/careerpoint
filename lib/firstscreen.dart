@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:careerpoint/login_page.dart';
 import 'package:careerpoint/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -16,70 +18,79 @@ class _FirstScreenState extends State<FirstScreen> {
       drawer: Drawer(
         child: ListView(
           children: [
-            ListTile(
+            const ListTile(
               title: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: Text(
                   'Build your profile',
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
               ),
               leading: CircleAvatar(
-                backgroundImage: AssetImage('assets/avathr.png'),
+                // backgroundImage: AssetImage('assets/avathr.png'),
+                backgroundImage: NetworkImage(
+                    'https://img.freepik.com/premium-psd/3d-cartoon-avatar-smiling-woman_1020-5129.jpg?w=2000'),
                 radius: 25,
               ),
               subtitle: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Job opportunities waiting for you at Careerpoint',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                 ),
               ),
             ),
-            FloatingActionButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginPage()));
-              },
-              child: Text('Login'),
-              shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(7),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const LoginPage()));
+                },
+                child: const Text('Login'),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                ),
               ),
             ),
-            SizedBox(
-              height: 15,
+            const SizedBox(
+              height: 5,
             ),
-            FloatingActionButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SignUp(),
-                    ));
-              },
-              child: Text('SignUp'),
-              shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(7),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => const SignUp()));
+                },
+                child: const Text('Sign Up'),
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
               ),
             ),
-            Text(
+            const SizedBox(
+              height: 25,
+            ),
+            const Text(
               'About Us',
               style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            Text(
+            const Text(
               'Blog',
               style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 15),
-            Text(
+            const SizedBox(height: 15),
+            const Text(
               'FAQ',
               style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 15),
-            Text(
+            const SizedBox(height: 15),
+            const Text(
               'Contact Us',
               style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
             ),
@@ -87,7 +98,7 @@ class _FirstScreenState extends State<FirstScreen> {
         ),
       ),
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Careerpoint.com',
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
@@ -97,11 +108,11 @@ class _FirstScreenState extends State<FirstScreen> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(30),
+                padding: const EdgeInsets.all(30),
                 child: Form(
                     child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Finding the right job made easy with CareerPoint.com. Register Now and Apply to the best jobs!',
                       style: TextStyle(
                           fontSize: 21,
@@ -109,7 +120,7 @@ class _FirstScreenState extends State<FirstScreen> {
                           color: Colors.blue,
                           fontStyle: FontStyle.italic),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 100,
                     ),
                     Image.asset(
@@ -117,67 +128,58 @@ class _FirstScreenState extends State<FirstScreen> {
                       height: 150,
                       width: 150,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
-                    Text(
+                    const Text(
                       'Find Your Dream Job',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 60,
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: 50,
-                      child: FloatingActionButton(
+                      child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LoginPage(),
-                              ));
+                                  builder: (context) => const LoginPage()));
                         },
-                        child: Text('Login'),
-                        shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(10)),
+                        child: const Text('Login'),
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50)),
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
+                    const SizedBox(
+                      height: 30,
                     ),
-                    Text(
-                      'Or',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                    Text('Or',style: TextStyle(fontWeight: FontWeight.bold),),
                     SizedBox(
-                      height: 20,
+                      height: 30,
+
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: 50,
-                      child: FloatingActionButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SignUp(),
-                              ));
-                          FloatingActionButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LoginPage(),
-                                  ));
-                            },
-                          );
-                        },
-                        child: Text('Sign Up'),
-                        shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(10)),
-                      ),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignUp(),
+                                ));
+                          },
+                          child: const Text('SignUp'),
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)),
+                          )),
                     ),
                   ],
                 )),

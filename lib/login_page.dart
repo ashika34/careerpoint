@@ -67,18 +67,21 @@ class _LoginPageState extends State<LoginPage> {
               Container(
         width: MediaQuery.of(context).size.width,
         height: 50,
-        child:FloatingActionButton(onPressed: () {
+        child:ElevatedButton(onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
         },
         child: Text('Login'),
-        shape: new RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(10)
-        ),
-        ) ,
-      ),
+        style:ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50)
 
-              ],
-            )
+          ),
+        ),
+        
+      ),),
+
+              ]
+            ),
             ),
             )
             
