@@ -1,3 +1,4 @@
+import 'package:careerpoint/homepage.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,11 +18,10 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Center(
-            child: Text(
+        title: Text(
           'Hello Again',
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-        )),
+        ),
       ),
       
       body: SingleChildScrollView(
@@ -38,6 +38,10 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 30,
                 ),
+                Text('Your Dream job is just a few clicks away',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
+              SizedBox(
+                height: 50,
+              ),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
@@ -50,37 +54,33 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(
                   height: 35,
-
-                ),
+                  ),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     labelText:'Password',
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.password,color: Colors.black,),
-
-                  ),
+ ),
                 ),
                 SizedBox(
                 height: 30,
                 ),
-              Container(
+        Container(
         width: MediaQuery.of(context).size.width,
         height: 50,
         child:ElevatedButton(onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
         },
         child: Text('Login'),
         style:ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50)
-
-          ),
+ ),
         ),
         
       ),),
-
-              ]
+ ]
             ),
             ),
             )

@@ -1,6 +1,13 @@
+import 'package:careerpoint/aboutus.dart';
+import 'package:careerpoint/contactus.dart';
+import 'package:careerpoint/employers.dart';
+import 'package:careerpoint/faq.dart';
 import 'package:careerpoint/firstscreen.dart';
+import 'package:careerpoint/homepage.dart';
 import 'package:careerpoint/login_page.dart';
+import 'package:careerpoint/searchjobs.dart';
 import 'package:careerpoint/sign_up.dart';
+import 'package:careerpoint/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,9 +23,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
        
-        primarySwatch: Colors.deepOrange
+        primarySwatch: Colors.purple
       ),
-      home: FirstScreen()
+      home:SplashScreen()
     );
   }
 }
